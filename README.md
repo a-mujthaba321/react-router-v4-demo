@@ -19,10 +19,3 @@ Read more about it: [The Minimal React Webpack Babel Setup](https://www.robinwie
 * npm install
 * npm start
 * visit `http://localhost:8080/`
-=======
-# formik-demo
->>>>>>> 79e5f06fd4334e26a5474d9428504f516c544f8d
-=======
-# react-router-v4-demo
-React boilerplate with react router v4 setup
->>>>>>> e4bf1467dd2798042850a1a352f66d09c1d11841
