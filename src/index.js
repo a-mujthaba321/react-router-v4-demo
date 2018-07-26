@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import AddCourse from '../src/components/AddCourse';
 import ViewPost from '../src/components/ViewPost';
-import PostIndex from '../src/components/PostIndex';
+import CourseList from '../src/components/CourseList';
 
 const title = 'My Minimal React Webpack Babel Setup';
 
@@ -15,6 +15,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import promise from 'redux-promise';
 import reducers from './reducers';
+
+import App from './components/App';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
 
@@ -29,11 +31,10 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <div>
-        |HEADER|
         <Switch>
           <Route path="/AddCourse" component={AddCourse} />
           <Route path="/ViewPost" component={ViewPost} />
-          <Route path="/" component={PostIndex} />
+          <Route path="/" component={App} />
         </Switch>
       </div>
     </BrowserRouter>
