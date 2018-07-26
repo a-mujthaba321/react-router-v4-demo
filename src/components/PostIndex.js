@@ -1,17 +1,31 @@
-
 import React, { Component } from 'react';
 
-import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import { fetchCourses } from '../actions/action_course';
 
-const PostIndex = (props) => {
+import { Link } from 'react-router-dom';
 
-    return(
-        <div>
-            <Link className="btn btn-primary" to="/MyPost">
-                View My Post
-            </Link>
-        </div>
+class PostIndex extends Component {
+  componentDidMount() {
+    this.props.fetchCourses();
+  }
+
+  render() {
+    return (
+      <div>
+        <Link className="btn btn-primary" to="/AddCourse">
+          Add Course
+        </Link>
+      </div>
     );
+  }
 }
 
-export default PostIndex;
+function mapStateToProps(state) {
+  return { courses: state.courses };
+}
+
+export default connect(
+  mapStateToProps,
+  { fetchCourses }
+)(PostIndex);
