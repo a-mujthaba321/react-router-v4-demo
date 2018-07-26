@@ -10,7 +10,6 @@ class AddCourse extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // toggle box is closed initially
       showAdd: false
     };
 
@@ -22,7 +21,7 @@ class AddCourse extends Component {
   onSubmit(values) {
     console.log('Values', values);
     this.props.createCourse(values);
-    this.props.history.push('/');
+    this.props.hide();
   }
 
   renderField(field) {
@@ -51,8 +50,9 @@ class AddCourse extends Component {
 
   render() {
     const { handleSubmit } = this.props;
+    const style = this.props.style;
     return (
-      <div className="container-fluid">
+      <div className="container-fluid w3-animate-opacity">
         <div className="row">
           {/* <div className="col-sm-2">
             <Link className="btn btn-primary" to="/">

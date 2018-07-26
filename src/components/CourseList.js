@@ -20,13 +20,9 @@ class PostIndex extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid w3-animate-opacity">
+        <h4>Courses</h4>
         <div className="row">
-          {/* <div className="col-sm-2">
-            <Link className="btn btn-primary" to="/AddCourse">
-              Add Course
-            </Link>
-          </div> */}
           <div className="col-sm-10">{this.renderCourses()}</div>
         </div>
       </div>

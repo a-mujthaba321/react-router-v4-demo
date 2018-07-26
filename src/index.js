@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import '../src/css/bootstrap-extensions.css';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 

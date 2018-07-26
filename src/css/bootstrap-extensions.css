@@ -1,0 +1,11 @@
+.w3-animate-opacity {
+  animation: opac 0.7s;
+}
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
