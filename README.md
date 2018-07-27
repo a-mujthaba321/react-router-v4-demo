@@ -11,6 +11,9 @@ This project is forked from the fantastic react-webpack boilerplate from Robin W
 * Babel
 * Staging ES Next Features
 * Hot Module Replacement
+* ESLint
+* Prettier
+* ReactCSSTransitionGroup
 
 ## Installation
 
