@@ -10,6 +10,7 @@ This project is forked from the fantastic [react-webpack boilerplate](https://gi
 * Webpack 4
 * Redux
 * Redux-Form
+* Redux-thunk
 * Babel
 * Staging ES Next Features
 * Hot Module Replacement
