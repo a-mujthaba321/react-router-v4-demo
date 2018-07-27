@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { createCourse } from '../actions/action_course';
 
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import { connect } from 'react-redux';
 
 class AddCourse extends Component {
@@ -50,9 +52,15 @@ class AddCourse extends Component {
 
   render() {
     const { handleSubmit } = this.props;
-    const style = this.props.style;
+    const transitionOptions = {
+      transitionName: 'fade',
+      transitionEnterTimeout: 500,
+      transitionLeaveTimeout: 500,
+      transitionAppear: true,
+      transitionAppearTimeout: 500
+    };
     return (
-      <div className="container-fluid w3-animate-opacity">
+      <div className="container-fluid">
         <div className="row">
           {/* <div className="col-sm-2">
             <Link className="btn btn-primary" to="/">
@@ -60,30 +68,32 @@ class AddCourse extends Component {
             </Link>
           </div> */}
           <div className="col-sm-10">
-            <form onSubmit={handleSubmit(this.onSubmit)}>
-              <Field
-                label="Course Name"
-                name="courseName"
-                type="text"
-                component={this.renderField}
-              />
-              <Field
-                label="Lecturer Name"
-                name="lecturerName"
-                type="text"
-                component={this.renderField}
-              />
-              <Field
-                label="Number of Students"
-                name="numberOfStudents"
-                component={this.renderField}
-                type="number"
-              />
-              <Field label="Is Full" name="isFull" component={this.renderCheckBox} />
-              <button type="submit" className="btn btn-primary">
-                Save
-              </button>
-            </form>
+            <ReactCSSTransitionGroup {...transitionOptions}>
+              <form onSubmit={handleSubmit(this.onSubmit)}>
+                <Field
+                  label="Course Name"
+                  name="courseName"
+                  type="text"
+                  component={this.renderField}
+                />
+                <Field
+                  label="Lecturer Name"
+                  name="lecturerName"
+                  type="text"
+                  component={this.renderField}
+                />
+                <Field
+                  label="Number of Students"
+                  name="numberOfStudents"
+                  component={this.renderField}
+                  type="number"
+                />
+                <Field label="Is Full" name="isFull" component={this.renderCheckBox} />
+                <button type="submit" className="btn btn-primary">
+                  Save
+                </button>
+              </form>
+            </ReactCSSTransitionGroup>
           </div>
         </div>
       </div>

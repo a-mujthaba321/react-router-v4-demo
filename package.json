@@ -37,6 +37,7 @@
     "bootstrap": "^4.1.1",
     "formik": "^1.0.1",
     "react": "^16.4.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",

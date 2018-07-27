@@ -29,8 +29,8 @@ export default class App extends React.Component {
           </div>
         </div>
         <div className="row">
-          {this.state.showAdd && <AddCourse hide={this.showAddDialog} style={this.state.style} />}
-          {!this.state.showAdd && <CourseList style={this.state.style} />}
+          {this.state.showAdd && <AddCourse hide={this.showAddDialog} />}
+          {!this.state.showAdd && <CourseList />}
         </div>
       </div>
     );
