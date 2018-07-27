@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+import { withTransition } from '../components/hoc/withTransition';
+
 class CourseList extends Component {
   componentDidMount() {
     this.props.fetchCourses();
@@ -21,21 +23,12 @@ class CourseList extends Component {
   }
 
   render() {
-    const transitionOptions = {
-      transitionName: 'fade',
-      transitionEnterTimeout: 500,
-      transitionLeaveTimeout: 500,
-      transitionAppear: true,
-      transitionAppearTimeout: 500
-    };
     return (
-      <div className="container-fluid">
-        <ReactCSSTransitionGroup {...transitionOptions}>
-          <h4>Courses</h4>
-          <div className="row">
-            <div className="col-sm-10">{this.renderCourses()}</div>
-          </div>
-        </ReactCSSTransitionGroup>
+      <div>
+        <h4>Courses</h4>
+        <div className="row">
+          <div className="col-sm-10">{this.renderCourses()}</div>
+        </div>
       </div>
     );
   }
@@ -48,4 +41,4 @@ function mapStateToProps(state) {
 export default connect(
   mapStateToProps,
   { fetchCourses }
-)(CourseList);
+)(withTransition(CourseList));

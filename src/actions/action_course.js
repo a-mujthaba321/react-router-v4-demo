@@ -8,17 +8,22 @@ const ROOT_URL = 'http://localhost:8080';
 export function fetchCourses() {
   const request = axios.get(`${ROOT_URL}/courses`);
 
-  return {
-    type: FETCH_COURSES,
-    payload: request
+  return (dispatch) => {
+    request.then((data) => {
+      dispatch({
+        type: FETCH_COURSES,
+        payload: data
+      });
+    });
   };
 }
 
 export function createCourse(values) {
   const request = axios.post(`${ROOT_URL}/courses`, values);
 
-  return {
-    type: CREATE_COURSE,
-    payload: request
+  return (dispatch) => {
+    request.then(() => {
+      dispatch(fetchCourses());
+    });
   };
 }
