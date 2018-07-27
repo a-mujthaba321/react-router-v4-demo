@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { createCourse } from '../actions/action_course';
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { withTransition } from '../components/hoc/withTransition';
 
 import { connect } from 'react-redux';
 
@@ -52,13 +52,7 @@ class AddCourse extends Component {
 
   render() {
     const { handleSubmit } = this.props;
-    const transitionOptions = {
-      transitionName: 'fade',
-      transitionEnterTimeout: 500,
-      transitionLeaveTimeout: 500,
-      transitionAppear: true,
-      transitionAppearTimeout: 500
-    };
+
     return (
       <div className="container-fluid">
         <div className="row">
@@ -68,32 +62,30 @@ class AddCourse extends Component {
             </Link>
           </div> */}
           <div className="col-sm-10">
-            <ReactCSSTransitionGroup {...transitionOptions}>
-              <form onSubmit={handleSubmit(this.onSubmit)}>
-                <Field
-                  label="Course Name"
-                  name="courseName"
-                  type="text"
-                  component={this.renderField}
-                />
-                <Field
-                  label="Lecturer Name"
-                  name="lecturerName"
-                  type="text"
-                  component={this.renderField}
-                />
-                <Field
-                  label="Number of Students"
-                  name="numberOfStudents"
-                  component={this.renderField}
-                  type="number"
-                />
-                <Field label="Is Full" name="isFull" component={this.renderCheckBox} />
-                <button type="submit" className="btn btn-primary">
-                  Save
-                </button>
-              </form>
-            </ReactCSSTransitionGroup>
+            <form onSubmit={handleSubmit(this.onSubmit)}>
+              <Field
+                label="Course Name"
+                name="courseName"
+                type="text"
+                component={this.renderField}
+              />
+              <Field
+                label="Lecturer Name"
+                name="lecturerName"
+                type="text"
+                component={this.renderField}
+              />
+              <Field
+                label="Number of Students"
+                name="numberOfStudents"
+                component={this.renderField}
+                type="number"
+              />
+              <Field label="Is Full" name="isFull" component={this.renderCheckBox} />
+              <button type="submit" className="btn btn-primary">
+                Save
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -112,10 +104,12 @@ function validate(values) {
   return errors;
 }
 
+const AddCourseWithTransition = withTransition(AddCourse);
+
 export default reduxForm({
   form: 'AddCourseForm',
   validate
 })(connect(
   null,
   { createCourse }
-)(AddCourse));
+)(AddCourseWithTransition));
