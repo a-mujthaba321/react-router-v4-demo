@@ -8,12 +8,15 @@ This project is forked from the fantastic react-webpack boilerplate from Robin W
 
 * React 16
 * Webpack 4
+* Redux
+* Redux-Form
 * Babel
 * Staging ES Next Features
 * Hot Module Replacement
 * ESLint
 * Prettier
 * ReactCSSTransitionGroup
+* Redux-Dev-Tools
 
 ## Installation
 
