@@ -11,8 +11,8 @@ const transitionOptions = {
   transitionAppearTimeout: 500
 };
 
-export function withTransition(WrappedComponent) {
-  return class extends React.Component {
+export const withTransition = WrappedComponent =>
+  class extends React.Component {
     render() {
       return (
         <div className="container-fluid">
@@ -23,6 +23,3 @@ export function withTransition(WrappedComponent) {
       );
     }
   };
-}
-
-// export default withTransition;
