@@ -8,7 +8,7 @@
     "test": "echo \"No test specified\" && exit 0",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
-    "build": "webpack -p"
+    "build": "webpack -p --config ./webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +18,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^1.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",

@@ -21,12 +21,6 @@ import App from './components/App';
 
 import configureStore from './store';
 
-import { composeWithDevTools } from 'redux-devtools-extension';
-
-// const store = createStore(reducers,composeWithDevTools(applyMiddleware((promise)(createStore))));
-
-// const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
-
 // <SWitch> is used to solve loose matching of route urls
 // <Switch> introduced in v4
 
