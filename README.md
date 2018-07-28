@@ -18,6 +18,7 @@ This project is forked from the fantastic [react-webpack boilerplate](https://gi
 * Prettier
 * ReactCSSTransitionGroup
 * Redux-Dev-Tools
+* Express server for production
 
 ## Installation
 
