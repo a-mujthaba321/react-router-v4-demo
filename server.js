@@ -7,7 +7,7 @@ const app = express();
 
 const distPath = path.join(__dirname, '/dist');
 
-app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static(distPath));
 app.listen(port);
 
 console.log('serving content from path: ', distPath);
