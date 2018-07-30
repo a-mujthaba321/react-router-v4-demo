@@ -1,5 +1,7 @@
 # react-router-redux-boilerplate
 
+[![Build Status](https://travis-ci.org/a-mujthaba321/react-semantic-boilerplate.svg?branch=master)](https://travis-ci.org/a-mujthaba321/react-semantic-boilerplate)
+
 This project is forked from the fantastic [react-webpack boilerplate](https://github.com/rwieruch/minimal-react-webpack-babel-setup) from Robin Wieruch.
 
 ## Features
